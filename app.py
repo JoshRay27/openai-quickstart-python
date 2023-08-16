@@ -37,6 +37,7 @@ def index():
         temp = temp[:end] + " Look for the key."
 
         return redirect(url_for("index", result=temp))
+    elif count == 2 and request.method == "POST":
         keyFound = False
         input = request.form["animal"]
         response = openai.ChatCompletion.create(
